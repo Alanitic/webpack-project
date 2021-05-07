@@ -2,6 +2,7 @@ $font-stack: Helvetica, sans-serif;
 $primary-color: #333;
 
 body {
+  min-height: 100vh;
   display: grid;
   font: 100% $font-stack;
   color: $primary-color;
@@ -16,6 +17,12 @@ header {
 
 main {
   grid-area: content;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 'none1 data none2';
+  section {
+    grid-area: data;
+  }
 }
 
 footer {
