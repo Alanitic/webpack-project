@@ -8,6 +8,8 @@ module.exports = {
     library: 'Client',
   },
   mode: 'development',
+  devtool: 'source-map',
+  stats: 'verbose',
   devServer: {
     contentBase: './dist',
   },

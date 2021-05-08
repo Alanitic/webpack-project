@@ -1,9 +1,9 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0 10px rgba(195, 195, 195, 0.1);
   align-items: center;
-  justify-content: space-around;
+  box-shadow: 0 0 10px rgba(195, 195, 195, 0.3);
+  justify-content: center;
   position: relative;
   overflow: hidden;
   .content-name {

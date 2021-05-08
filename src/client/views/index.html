@@ -10,12 +10,19 @@
     </header>
     <main>
       <section id="form">
-        <div class="wrapper">
-          <input name="name" required type="text" />
-          <label for="name" class="label-name"
-            ><span class="content-name">Name</span></label
-          >
-        </div>
+        <form onsubmit="return Client.handleSubmit(event)">
+          <div class="wrapper">
+            <input id="analyze" name="analyze" required type="text" />
+            <label for="analyze" class="label-name"
+              ><span class="content-name">Name</span></label
+            >
+          </div>
+        </form>
+      </section>
+
+      <section>
+        <strong>Form Results:</strong>
+        <div id="results"></div>
       </section>
     </main>
     <footer><p>footer area</p></footer>
