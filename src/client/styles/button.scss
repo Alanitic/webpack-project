@@ -1,0 +1,17 @@
+$button-color: #e4223f;
+
+.btn-submit {
+  box-shadow: 0 5px 15px rgba(255, 75, 102, 60%);
+  width: 100%;
+  background: transparent;
+  background-color: $button-color;
+  border-radius: 40px;
+  outline: none;
+  border: none;
+  color: white;
+  min-height: 5vh;
+  margin-top: 1vh;
+  &:hover {
+    background-color: lighten($button-color, 10%);
+  }
+}
