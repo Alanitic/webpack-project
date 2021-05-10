@@ -6,7 +6,7 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  .content-name {
+  .content-text {
     position: absolute;
     bottom: 5px;
     left: 0px;
@@ -19,13 +19,13 @@
     outline: none;
     border-bottom: 2px solid silver;
     padding-top: 20px;
-    &:focus + .label-name .content-name,
-    &:valid + .label-name .content-name {
+    &:focus + .label-text .content-text,
+    &:valid + .label-text .content-text {
       transform: translateY(-100%);
       color: #5fa8d3;
     }
-    &:focus + .label-name::after,
-    &:valid + .label-name::after {
+    &:focus + .label-text::after,
+    &:valid + .label-text::after {
       transform: translateX(0%);
     }
   }

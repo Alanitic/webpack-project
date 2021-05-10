@@ -22,11 +22,11 @@ app.get('/', (req, res) => {
 app.post('/sentiment', (req, res) => {
   const { text } = req.body;
   if (text) {
-    const fullUrl = `${sentimentUrl}/?key=${process.env.API_KEY}&lang=en&model=general&txt=${text}`;
-    serverReq.postRequest(fullUrl).then((data) => {
-      console.log(data);
+    const fullUrl = `${sentimentUrl}?key=${process.env.API_KEY}&lang=en&model=general&txt=${text}`;
+    serverReq.postRequest(fullUrl).then((response) => {
+      const { confidence, subjectivity, irony, sentence_list } = response.data;
+      res.status(200).send({ confidence, subjectivity, irony, sentence_list });
     });
-    res.status(200).send({ success: true });
   } else {
     res.status(400).send('No text to analyze');
   }

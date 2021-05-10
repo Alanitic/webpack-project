@@ -9,22 +9,34 @@
       <p>header area</p>
     </header>
     <main>
-      <section id="form">
-        <form onsubmit="return Client.handleSubmit(event)">
-          <div class="wrapper">
-            <input id="analyze" name="analyze" required type="text" />
-            <label for="analyze" class="label-name"
-              ><span class="content-name">Name</span></label
-            >
-          </div>
-          <button class="btn-submit">Submit</button>
-        </form>
-      </section>
+      <div class="container">
+        <section id="form">
+          <form onsubmit="return Client.handleSubmit(event)">
+            <div class="wrapper">
+              <input id="analyze" name="analyze" required type="text" />
+              <label for="analyze" class="label-text"
+                ><span class="content-text">Text</span></label
+              >
+            </div>
+            <button class="btn-submit">Submit</button>
+          </form>
+        </section>
 
-      <section>
-        <strong>Form Results:</strong>
-        <div id="results"></div>
-      </section>
+        <section>
+          <h3>Analysis Results</h3>
+          <strong>Confidence: </strong>
+          <div id="confidence"></div>
+          <br />
+          <strong>Subjectivity: </strong>
+          <div id="subjectivity"></div>
+          <br />
+          <strong>Irony: </strong>
+          <div id="irony"></div>
+          <br />
+          <strong>Sentence results:</strong>
+          <div id="results"></div>
+        </section>
+      </div>
     </main>
     <footer><p>footer area</p></footer>
   </body>

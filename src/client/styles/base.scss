@@ -20,8 +20,11 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 'none1 data none2';
-  section {
+  .container {
     grid-area: data;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 }
 
