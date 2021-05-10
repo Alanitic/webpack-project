@@ -11,8 +11,25 @@ app.use(express.json());
 
 app.use(express.static('dist'));
 
-app.get('/', function (req, res) {
+const serverReq = require('./server-request');
+
+const sentimentUrl = 'https://api.meaningcloud.com/sentiment-2.1';
+
+app.get('/', (req, res) => {
   res.sendFile(__dirname + '/dist/index.html');
+});
+
+app.post('/sentiment', (req, res) => {
+  const { text } = req.body;
+  if (text) {
+    const fullUrl = `${sentimentUrl}/?key=${process.env.API_KEY}&lang=en&model=general&txt=${text}`;
+    serverReq.postRequest(fullUrl).then((data) => {
+      console.log(data);
+    });
+    res.status(200).send({ success: true });
+  } else {
+    res.status(400).send('No text to analyze');
+  }
 });
 
 app.listen(8081, function () {
