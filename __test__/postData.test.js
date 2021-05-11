@@ -6,6 +6,15 @@ describe('Posting data to backend', () => {
     const result = await postData('http://localhost:8081/sentiment', {
       text: 'example',
     });
-    console.log(result);
+    expect(result).not.toBeNull();
+    expect(result.status).toBe(200);
+  });
+  test('should return 400', async () => {
+    try {
+      const result = await postData('http://localhost:8081/sentiment');
+    } catch (e) {
+      expect(e).not.toBeNull();
+      expect(e.response.status).toBe(400);
+    }
   });
 });
