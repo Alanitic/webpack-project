@@ -6,8 +6,9 @@ const handleSubmit = (event) => {
     Client.postData('http://localhost:8081/sentiment', {
       text: toAnalyze,
     }).then((res) => {
+      const { data } = res;
       Client.ToggleDisabled();
-      Client.FillUiWithData(res);
+      Client.FillUiWithData(data);
     });
   } else {
     alert('Please provide a valid text');
