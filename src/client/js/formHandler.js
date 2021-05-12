@@ -8,7 +8,7 @@ const handleSubmit = (event) => {
     }).then((res) => {
       const { data } = res;
       Client.ToggleDisabled();
-      Client.FillUiWithData(data);
+      Client.FillUiWithData(data, document);
     });
   } else {
     alert('Please provide a valid text');

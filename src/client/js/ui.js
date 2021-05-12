@@ -3,7 +3,7 @@ const ToggleDisabled = () => {
   submitBtn.toggleAttribute('disabled');
 };
 
-const FillUiWithData = (data) => {
+const FillUiWithData = (data, document) => {
   const results = document.querySelector('#results');
   const fragment = document.createDocumentFragment();
   document.querySelector('#confidence').innerHTML = data.confidence;
