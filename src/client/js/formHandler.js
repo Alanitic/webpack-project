@@ -20,4 +20,4 @@ const validate = (text) => {
   return isValid;
 };
 
-export { handleSubmit };
+export { handleSubmit, validate };
